@@ -11,12 +11,12 @@ int main(int argc, char **argv) {
     FILE *fi, *fo;
     int c;
 
-    fi = fopen("tones.bas", "r");
-    fo = fopen("TONES.LST", "w");
+    fi = fopen(argv[1], "r");
+    fo = fopen(argv[2], "w");
 
     while ((c = fgetc(fi)) != EOF) {
-        if (c == PC_NEWLINE) {
-            fputc(ATARI_NEWLINE, fo);
+        if (c == ATARI_NEWLINE) {
+            fputc(PC_NEWLINE, fo);
         } else {
             fputc(c, fo);
         }
