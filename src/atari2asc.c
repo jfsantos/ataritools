@@ -3,13 +3,14 @@
 #define ATARI_NEWLINE 155
 
 int main(int argc, char **argv) {
+
+    FILE *fi, *fo;
+    int c;
+
     if (argc < 3) {
         fprintf(stderr, "Usage: atari2asc INPUT.LST output.bas\n");
         return -1;
     }
-
-    FILE *fi, *fo;
-    int c;
 
     fi = fopen(argv[1], "r");
     fo = fopen(argv[2], "w");
